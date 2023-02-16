@@ -1,7 +1,11 @@
 #include<stdio.h>
 
-/*A program that uses puts function*/
-int main(void) 
+/**
+ * main -Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
 {
 	/*string initialisation*/
 	char myPut[] = "Programming is like building a multilingual puzzle";
