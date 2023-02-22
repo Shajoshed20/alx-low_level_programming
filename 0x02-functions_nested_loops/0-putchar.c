@@ -2,9 +2,9 @@
 /*print using _putchar */
 
 /**
- * Main - Entry point
+ * main - Entry point
  *
- * Return: Always 0
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
