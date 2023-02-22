@@ -3,7 +3,7 @@
 
 /**
  * _abs - function name
- * @int: integer computed
+ * @a: integer computed
  * Return: int type
  */
 int _abs(int a)
