@@ -2,11 +2,11 @@
 /*print 9 times table*/
 
 /**
- * time_table - fucntion
+ * times_table - function
  *
  * Return: void type
  */
-void time_table(void)
+void times_table(void)
 {
 	int a, b, c;
 
