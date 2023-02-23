@@ -1,0 +1,19 @@
+#include "main.h"
+
+/**
+ * print_numbers - Function to print numbers 0-9
+ *
+ * Return: void type
+ */
+
+void print_numbers(void)
+{
+	int x;
+
+	for (x = 0; x < 10; x++)
+	{
+		_putchar(x + '0');
+	}
+	putchar('\n');
+
+}
