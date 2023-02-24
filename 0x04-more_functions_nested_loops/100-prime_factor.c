@@ -9,19 +9,24 @@
 
 int main(void)
 {
-	long a, max;
-	long num = 612852475143;
-	double sq = sqrt(num);
+	long num = 612852475143, sq;
 
-	for (a = 1; a <= sq; a++)
+	while (sq < (num / 2))
 	{
-		if (num % a == 0)
+		if ((num % 2) == 0)
 		{
-			max = num / a;
+			num /= 2;
+			continue;
+		}
+
+		for (sq = 3; sq < (num / 2); sq += 2)
+		{
+			if ((num % sq) == 0)
+				num /= sq;
 		}
 	}
 
-	prinf("%d\n", max);
+	prinf("%d\n", num);
 
 	return (0);
 }
