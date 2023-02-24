@@ -1,5 +1,5 @@
 # More functions, more nested loops
-##General Objectives
+## General Objectives
 * What are nested loops and how to use them
 * What is a function and how do you use functions
 * What is the difference between a declaration and a definition of a function
@@ -8,7 +8,7 @@
 * What are the gcc flags -Wall -Werror -pedantic -Wextra -std=gnu89
 * What are header files and how to to use them with #include
 
-##Tasks
+## Tasks
 * Task 0 - Write a function that checks for uppercase character.
 * Task 1 - Write a function that checks for a digit (0 through 9).
 * Task 2 - Write a function that multiplies two integers.
