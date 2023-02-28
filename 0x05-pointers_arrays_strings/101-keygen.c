@@ -10,38 +10,27 @@
 
 int main(void)
 {
-	char pword[84];
-	int a = 0, sum = 0, f_half, s_half;
+	int pword[100];
+	int a, sum, n;
 
-	srand(time(0));
+	sum = 0;
 
-	while (sum < 2772)
+	srand(time('\0'));
+
+	for (a = 0; a < 100; a++)
 	{
-		pword[a] = (sum - 2772) / 2;
-		sum += pword[a++];
-	}
+		pword[a] = rand() % 78;
+		sum += (pword[a] + '0');
+		putchar(pword[a] + '0');
 
-	pword[a] = '\0';
-
-	if (sum != 2772)
-	{
-		f_half = (sum - 2772) / 2;
-		s_half = (sum - 2772) / 2;
-
-		if ((sum - 2772) % 2 != 0)
-			f_half++;
-
-		for (a = 0; pword[a]; a++)
+		if ((2772 - sum) - '0' < 78)
 		{
-			if (pword[a] >= (33 + s_half))
-			{
-				pword[a] -= s_half;
-				break;
-			}
+			n = 2772 - sum - '0';
+			sum += n;
+			putchar (n + '0');
+			break;
 		}
 	}
-
-	printf("%s", pword);
 
 	return (0);
 }
