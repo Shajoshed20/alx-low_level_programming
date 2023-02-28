@@ -12,7 +12,7 @@ void puts_half(char *str)
 	int c = 0;
 	int strlen;
 
-	while (c != '\0')
+	while (str[c] != '\0')
 		c++;
 
 	if ((c % 2) == 1)
