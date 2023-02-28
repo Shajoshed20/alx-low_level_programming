@@ -28,7 +28,7 @@ int main(void)
 		f_half = (sum - 2772) / 2;
 		s_half = (sum - 2772) / 2;
 
-		if ((sun - 2772) % 2 != 0)
+		if ((sum - 2772) % 2 != 0)
 			f_half++;
 
 		for (a = 0; pword[a]; a++)
