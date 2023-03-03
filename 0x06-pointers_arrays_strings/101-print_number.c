@@ -13,11 +13,11 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		_putchar('_');
+		_putchar('-');
 		a = -a;
 	}
 
-	if ((a / 10) > 0)
+	if ((a / 10) != 0)
 		print_number(a / 10);
 
 
