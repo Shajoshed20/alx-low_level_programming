@@ -1,11 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - body of the program
- *
- * Return: integer type
- */
-
 int main(void)
 {
 	int n;
