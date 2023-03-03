@@ -11,8 +11,8 @@
 char *rot13(char *stg)
 {
 	int a, b;
-	char n_alp[52] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"};
-	char alp_rot13 [52] = {"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"};
+	char n_alp[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"};
+	char alp_rot13 [] = {"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"};
 
 	for (a = 0; stg[a] != '\0'; a++)
 	{
