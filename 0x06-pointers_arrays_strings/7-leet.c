@@ -9,20 +9,16 @@
 
 char *leet(char *str)
 {
-	int i = 0, j = 0;
-	char l[5] = {'A', 'E', 'O', 'T', 'L'};
-	char m[5] = {'4', '3', '0', '7', '1'};
+	int i = 0, j;
+	char l[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
 
 	while (str[i])
 	{
-		j = 0;
-
-		while (j < 1)
+		for (j = 0; j <= 7; j++)
 		{
 			if (str[i] == l[j] || str[i] - 32 == l[j])
-				str[i] = m[j];
+				str[i] = j + '0';
 
-			j++;
 		}
 		i++;
 	}
