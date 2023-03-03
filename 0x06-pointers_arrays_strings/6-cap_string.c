@@ -17,9 +17,9 @@ char *cap_string(char *str)
 	{
 		j = 0;
 
-		while (i < k)
+		while (j < k)
 		{
-			if ((i == 0 || str[i - 1] == cpc[i]) && (str[i] >= 97 && str[i] <= 122))
+			if ((i == 0 || str[i - 1] == cpc[j]) && (str[i] >= 97 && str[i] <= 122))
 				str[i] -= 32;
 
 			j++;
