@@ -10,11 +10,11 @@
 
 char *rot13(char *stg)
 {
-	int a = 0, b;
+	int a, b;
 	char n_alp[52] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"};
 	char alp_rot13 [52] = {"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"};
 
-	while (stg[a])
+	for (a = 0; stg[a] != '\0'; a++)
 	{
 		for (b = 0; b < 52; b++)
 		{
@@ -24,7 +24,6 @@ char *rot13(char *stg)
 				break;
 			}
 		}
-		a++;
 	}
 	return (stg);
 }
