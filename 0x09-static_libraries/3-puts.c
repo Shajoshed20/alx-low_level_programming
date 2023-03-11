@@ -1,17 +1,16 @@
 #include "main.h"
 
 /**
- * _puts - Function to print string
- * @s: charater variable for string
- *
- * Return: void type
+ * _puts - Prints a string to stdout.
+ * @s: The string to be printed.
  */
 
 void _puts(char *s)
 {
-	while (*s)
+	for (; *s != '\0'; s++)
 	{
-		_putchar(*s++);
+		_putchar(*s);
 	}
+
 	_putchar('\n');
 }
