@@ -1,4 +1,4 @@
-#ifdef main_h
+#ifndef main_h
 #define main_h
 
 /**
