@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * argtostr - Function to concatenate all arguments
+ * argstostr - Function to concatenate all arguments
  * @ac: vairable for number of arguments
  * @av: varaible for pointers to arguments
  *
