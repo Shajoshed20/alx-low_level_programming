@@ -4,9 +4,9 @@
 /**
  * ABS - function-like macro ABS(x) that
  *          computes the absolute value of a number x.
- * @X: variable for value
+ * @x: variable for value
 */
 
-#define ABS(X) ((X) < 0 ? (-X) : (X))
+#define ABS(x) ((x) < 0 ? ((x) * -1) : (x))
 
 #endif
