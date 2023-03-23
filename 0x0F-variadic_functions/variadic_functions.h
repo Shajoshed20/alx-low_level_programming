@@ -5,7 +5,7 @@
 
 /**
  * struct Display - structure defination for display.
- * @date_type: variable for the data type
+ * @data_type: variable for the data type
  * @print: variable to print function matching with data type
  */
 typedef struct Display
