@@ -7,19 +7,19 @@
  *
  * Return: value stored in the list
 */
-
 size_t print_listint(const listint_t *h)
 {
-	int a;
+	int count = 0;
 
-	for (a = 0; h; a++)
+	if (h != NULL)
 	{
-		if (h != NULL)
+		while (h)
 		{
 			printf("%d\n", h->n);
 			h = h->next;
+			count++;
 		}
 	}
 
-	return (a);
+	return (count);
 }
