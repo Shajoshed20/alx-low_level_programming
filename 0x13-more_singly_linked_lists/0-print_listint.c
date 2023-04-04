@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
  * print_listint - Function to print integer list
@@ -9,17 +8,16 @@
 */
 size_t print_listint(const listint_t *h)
 {
-	int count = 0;
+	int list;
 
-	if (h != NULL)
+	for (list = 0; h; list++)
 	{
-		while (h)
+		if (h != NULL)
 		{
 			printf("%d\n", h->n);
 			h = h->next;
-			count++;
 		}
 	}
 
-	return (count);
+	return (list);
 }
