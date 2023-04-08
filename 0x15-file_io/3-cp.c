@@ -49,13 +49,13 @@ void cpy_file(const char *src_path, const char *dest_path)
 
 	if (close(src_file) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_file);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %d\n", src_file);
 		exit(100);
 	}
 
 	if (close(dest_file) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", dest_file);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %d\n", dest_file);
 		exit(100);
 	}
 
@@ -71,7 +71,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
