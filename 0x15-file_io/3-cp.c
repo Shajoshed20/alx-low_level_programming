@@ -18,13 +18,12 @@ void cpy_file(const char *src_path, const char *dest_path)
 	char buffer[BUF_SIZE];
 
 	src_file = open(src_path, O_RDONLY);
+	dest_file = open(dest_path, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (!src_file || dest_file == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_path);
 		exit(98);
 	}
-
-	dest_file = open(dest_path, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
 	while ((read_size = read(src_file, buffer, BUF_SIZE)) > 0)
 	{
