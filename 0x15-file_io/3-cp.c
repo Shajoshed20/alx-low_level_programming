@@ -28,7 +28,7 @@ void cpy_file(const char *src_path, const char *dest_path)
 	if (dest_file == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_path);
-		exit(99);
+		exit(98);
 	}
 
 	while ((read_size = read(src_file, buffer, BUF_SIZE)) > 0)
