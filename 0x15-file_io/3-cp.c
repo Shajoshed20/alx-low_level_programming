@@ -34,7 +34,7 @@ void cpy_file(const char *src_path, const char *dest_path)
 	while ((read_size = read(src_file, buffer, BUF_SIZE)) > 0)
 	{
 		write_size = write(dest_file, buffer, read_size);
-		if (write_size == -1)
+		if (write_size != read_size || dest_file == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", dest_path);
 			exit(99);
