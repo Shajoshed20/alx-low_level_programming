@@ -18,7 +18,8 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 
-	copy_file(argv[1], argv[2]);
+	cpy_file(argv[1], argv[2]);
+
 	exit(0);
 }
 
