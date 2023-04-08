@@ -22,14 +22,14 @@ void cpy_file(const char *src_path, const char *dest_path)
 		exit(98);
 	}
 
-	dest_file = open(dest_path, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	dest_file = open(dest_path, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	while ((read_size = read(src_file, buffer, BUF_SIZE)) > 0)
 	{
 		write_size = write(dest_file, buffer, read_size);
 		if (write_size != read_size || dest_file == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", dest_path);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_path);
 			exit(99);
 		}
 	}
