@@ -77,6 +77,6 @@ int main(int argc, char **argv)
 
 	cpy_file(argv[1], argv[2]);
 
-	return (0);
+	exit(0);
 
 }
