@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#define BUF_SIZE 1024
+
 /*Description: Header for all the function in this project*/
 
 #include <sys/stat.h>

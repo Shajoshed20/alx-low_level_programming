@@ -1,15 +1,64 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
-void copy_file(const char *src, const char *dest);
+void cpy_file(const char *src_path, const char *dest_path);
 
 /**
-  * main - Entry point
-  * @argc: The argument count
-  * @argv: The argument vector
-  *
-  * Return: ...
-  */
+ * cpy_file - Function to copy content from one file to the other
+ * @src_path: variable for the source path of file
+ * @dest_path: variable for the destination path of file
+ *
+ * Return: void type
+ */
+void cpy_file(const char *src_path, const char *dest_path)
+{
+	int src_file, dest_file, read_size, write_size;
+	char buffer[BUF_SIZE];
+
+	src_file = open(src_path, O_RDONLY);
+	dest_file = open(dest_path, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (!src_file || dest_file == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_path);
+		exit(98);
+	}
+
+	while ((read_size = read(src_file, buffer, BUF_SIZE)) > 0)
+	{
+		write_size = write(dest_file, buffer, read_size);
+		if (write_size != read_size || dest_file == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", dest_path);
+			exit(99);
+		}
+	}
+
+	if (read_size == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_path);
+		exit(98);
+	}
+
+	if (close(src_file) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %d\n", src_file);
+		exit(100);
+	}
+
+	if (close(dest_file) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %d\n", dest_file);
+		exit(100);
+	}
+
+}
+/**
+ * main - Entry point
+ * @argc: variable for the number of argument
+ * @argv: variable to pointer for argument vector
+ *
+ * Return: Always (0) Success
+ */
 int main(int argc, char **argv)
 {
 	if (argc != 3)
@@ -18,55 +67,8 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 
-	copy_file(argv[1], argv[2]);
+	cpy_file(argv[1], argv[2]);
+
 	exit(0);
+
 }
-
-/**
-  * copy_file - ...
-  * @src: ...
-  * @dest: ...
-  *
-  * Return: ...
-  */
-void copy_file(const char *src, const char *dest)
-{
-	int ofd, tfd, readed;
-	char buff[1024];
-
-	ofd = open(src, O_RDONLY);
-	if (!src || ofd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src);
-		exit(98);
-	}
-
-	tfd = open(dest, O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	while ((readed = read(ofd, buff, 1024)) > 0)
-	{
-		if (write(tfd, buff, readed) != readed || tfd == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
-			exit(99);
-		}
-	}
-
-	if (readed == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src);
-		exit(98);
-	}
-
-	if (close(ofd) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ofd);
-		exit(100);
-	}
-
-	if (close(tfd) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", tfd);
-		exit(100);
-	}
-}
-
