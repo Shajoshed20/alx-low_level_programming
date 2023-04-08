@@ -12,8 +12,8 @@ void cpy_file(const char *src_path, const char *dest_path);
  */
 void cpy_file(const char *src_path, const char *dest_path)
 {
-	int src_file, dest_file, read_size, write_size;
-	char buffer[1024];
+	int src_file, dest_file, read_size;
+	char buffer[BUF_SIZE];
 
 	src_file = open(src_path, O_RDONLY);
 	dest_file = open(dest_path, O_WRONLY | O_CREAT | O_TRUNC, 0664);
@@ -23,10 +23,9 @@ void cpy_file(const char *src_path, const char *dest_path)
 		exit(98);
 	}
 
-	while ((read_size = read(src_file, buffer, 1024)) > 0)
+	while ((read_size = read(src_file, buffer, BUF_SIZE)) > 0)
 	{
-		write_size = write(dest_file, buffer, read_size);
-		if (write_size != read_size || dest_file == -1)
+		if (write(dest_file, buffer, read_size) != read_size || dest_file == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", dest_path);
 			exit(99);
