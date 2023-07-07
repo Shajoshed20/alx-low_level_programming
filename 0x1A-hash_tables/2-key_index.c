@@ -3,7 +3,7 @@
 /**
  * key_index - Function to get the index of a key
  * @key: Variable for key index
- * @size: Variable for array size 
+ * @size: Variable for array size
  *
  * Return: The key's index.
  *
