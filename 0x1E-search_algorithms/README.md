@@ -50,6 +50,16 @@
          `return (map);`
     `}`
 
-* Task 5 - 
-* Task 5 - 
-* Task 5 - 
+* Task 7 - 
+
+* Task 8 - What is the time complexity (average case) of a jump search in an array of size n, using step = sqrt(n)?
+
+* Task 9 - 
+* Task 10 - 
+* Task 11 - 
+* Task 12 - 
+* Task 13 - 
+
+* Task 14 - What is the time complexity (average case) of a jump search in a singly linked list of size n, using step = sqrt(n)?
+
+* Task 15 - What is the time complexity (average case) of a jump search in a skip list of size n, with an express lane using step = sqrt(n)?
